@@ -30,7 +30,13 @@ closeModalBtn.addEventListener('click', function() {
 // form validation 
 
 const form = document.getElementById("form");
-const errorElement = document.getElementById("error");
+const errorFirstNameElement = document.getElementById("errorFirstName");
+const errorLastNameElement = document.getElementById("errorLastName");
+const errorEmailElement = document.getElementById("errorEmail");
+const errorBirthDateElement = document.getElementById("errorBirthDate");
+const errorQuantityElement = document.getElementById("errorQuantity");
+const errorLocationElement = document.getElementById("errorLocation");
+const errorConditionElement = document.getElementById("errorConditions");
 const firstName = document.getElementById("first-name");
 const lastName = document.getElementById("last-name");
 const email = document.getElementById("email");
@@ -41,51 +47,61 @@ const location3 = document.getElementById ("location3");
 const location4 = document.getElementById ("location4");
 const location5 = document.getElementById ("location5");
 const location6 = document.getElementById ("location6");
+const checkbox1 = document.getElementById ("checkbox1");
+const submitButton = document.getElementById ("submit")
 
-//function checkForm(form){
 
 form.addEventListener('submit', (e) => {
+  
   let messages = []
 
-  if (firstName.value === '' || firstName.value == null) {
-    messages.push("Prénom obligatoire")
+  console.log(checkbox1);
+
+  if (firstName.value === '' || firstName.value == null || firstName.value.length <= 2) {
+    errorFirstNameElement.innerHTML = "Veuillez entrer 2 caractères ou plus pour le champ du prénom.";
+    messages.push("error");
   }
 
-  if (firstName.value.length <= 2) {
-    messages.push("Le prénom doit être plus long que 2 caractères")
-  }
-
-  if (lastName.value === '' || lastName.value == null) {
-    messages.push("Nom de famille obligatoire")
-  }
-
-  if (lastName.value.length <= 2) {
-    messages.push("Le nom de famille doit être plus long que 2 caractères")
+  if (lastName.value === '' || lastName.value == null || lastName.value.length <= 2) {
+    errorLastNameElement.innerHTML = "Veuillez entrer 2 caractères ou plus pour le champ du nom.";
+    messages.push("error");
   }
 
   if(email.value === '' || email.value == null) {
-    messages.push("Adresse email invalide")
+    errorEmailElement.innerHTML = "Veuillez entrer un email valide.";
+    messages.push("error");
+  }
+
+  if(birthdate.value === '' || birthdate.value == null) {
+    errorBirthDateElement.innerHTML = "Veuillez entrer votre date de naissance.";
+    messages.push("error");
   }
 
   if(quantity.value == '') {
-    messages.push("Veuillez cocher la case nombre de tournoi")
+    errorQuantityElement.innerHTML = "Veuillez indiquer le nombre de tournoi.";
+    messages.push("error");
   }
 
   if(location1.checked == false && location2.checked == false && location3.checked == false && location4.checked == false && location5.checked == false && location6.checked == false) {
-    messages.push("Veuillez cocher une ville")
+    errorLocationElement.innerHTML = "Veuillez cocher une ville.";
+    messages.push("error");
   }
 
-  if (messages.length > 0) {
-    e.preventDefault()
-    errorElement.innerText = messages.join(', ')
+  if(checkbox1.checked == false) {
+    errorConditionElement.innerHTML = "Veuillez accepter les conditions d'utilisation.";
+    messages.push("error");
   }
+
+
+  if (messages.length == 0) {
+    alert("Merci ! Votre réservation a été reçue.") 
+  } 
 
   else {
-    messages.push("Merci ! Votre réservation a été reçue.")
+    e.preventDefault() 
   }
 })
-//messages.push("Merci ! Votre réservation a été reçue.")
-//}
+
 
 
 
