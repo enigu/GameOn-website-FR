@@ -31,6 +31,7 @@ closeModalBtn.addEventListener('click', function() {
 // form validation 
 
 const form = document.getElementById("form");
+//divs showing error-messages
 const errorFirstNameElement = document.getElementById("errorFirstName");
 const errorLastNameElement = document.getElementById("errorLastName");
 const errorEmailElement = document.getElementById("errorEmail");
@@ -38,6 +39,7 @@ const errorBirthDateElement = document.getElementById("errorBirthDate");
 const errorQuantityElement = document.getElementById("errorQuantity");
 const errorLocationElement = document.getElementById("errorLocation");
 const errorConditionElement = document.getElementById("errorConditions");
+//modal elements
 const firstName = document.getElementById("first-name");
 const lastName = document.getElementById("last-name");
 const email = document.getElementById("email");
@@ -54,9 +56,10 @@ const submitButton = document.getElementById ("submit")
 
 form.addEventListener('submit', (e) => {
   
+  //array counting error messages
   let messages = []
 
-  //check first name
+  //check first name, if not ok show error message and push error in array for counting
 
   if (firstName.value === '' || firstName.value == null || firstName.value.length <= 2) {
     errorFirstNameElement.innerHTML = "Veuillez entrer 2 caractères ou plus pour le champ du prénom.";
@@ -98,7 +101,7 @@ form.addEventListener('submit', (e) => {
     messages.push("error");
   }
 
-  //check conditions accepation
+  //check conditions acceptation
 
   if(checkbox1.checked == false) {
     errorConditionElement.innerHTML = "Veuillez accepter les conditions d'utilisation.";
@@ -106,6 +109,8 @@ form.addEventListener('submit', (e) => {
   }
 
   //Check error-messages and submit conditions
+
+  //If no error messages in the messages array, submit form
 
   if (messages.length == 0) {
     alert("Merci ! Votre réservation a été reçue.") 
