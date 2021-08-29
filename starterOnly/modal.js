@@ -53,7 +53,7 @@ const location6 = document.getElementById ("location6");
 const checkbox1 = document.getElementById ("checkbox1");
 const submitButton = document.getElementById ("submit")
 
-
+//event listener sur le bouton submit
 form.addEventListener('submit', (e) => {
   
   //array counting error messages
@@ -116,6 +116,7 @@ form.addEventListener('submit', (e) => {
     alert("Merci ! Votre réservation a été reçue.") 
   } 
 
+  //if error-messages counted in the array prevent form from submitting
   else {
     e.preventDefault() 
   }
