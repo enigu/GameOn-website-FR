@@ -53,6 +53,9 @@ const location6 = document.getElementById ("location6");
 const checkbox1 = document.getElementById ("checkbox1");
 const submitButton = document.getElementById ("submit")
 
+//confirmation in case of successful booking
+const confirmation = document.getElementById("confirmation");
+
 //event listener sur le bouton submit
 form.addEventListener('submit', (e) => {
   
@@ -113,7 +116,8 @@ form.addEventListener('submit', (e) => {
   //If no error messages in the messages array, submit form
 
   if (messages.length == 0) {
-    alert("Merci ! Votre réservation a été reçue.") 
+    confirmation.innerHTML = "Merci! Votre réservation a été reçue.";
+     e.preventDefault();
   } 
 
   //if error-messages counted in the array prevent form from submitting
