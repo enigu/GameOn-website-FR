@@ -52,9 +52,7 @@ const location5 = document.getElementById ("location5");
 const location6 = document.getElementById ("location6");
 const checkbox1 = document.getElementById ("checkbox1");
 const submitButton = document.getElementById ("submit")
-
-//confirmation in case of successful booking
-const confirmation = document.getElementById("confirmation");
+const confirmation = document.getElementsByClassName ("confirmation");
 
 //event listener sur le bouton submit
 form.addEventListener('submit', (e) => {
@@ -116,7 +114,10 @@ form.addEventListener('submit', (e) => {
   //If no error messages in the messages array, submit form
 
   if (messages.length == 0) {
-    confirmation.innerHTML = "Merci! Votre réservation a été reçue.";
+    document.querySelector("#form").style.display = "none";
+    document.querySelector(".confirmation").style.display = "flex";
+    confirmation.innerHTML = "Merci ! Votre réservation a été reçue."
+    document.querySelector("#close-btn").style.display = "block";
      e.preventDefault();
   } 
 
@@ -125,6 +126,7 @@ form.addEventListener('submit', (e) => {
     e.preventDefault() 
   }
 })
+
 
 
 

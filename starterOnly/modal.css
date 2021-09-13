@@ -90,8 +90,6 @@ img {
   }
 }
 
-
-
  @media screen and (max-width: 540px) {
   .topnav a {display: none;}
   .topnav a.icon {
@@ -111,8 +109,6 @@ main {
   margin: 1px 20px 15px;
   border-radius: 2rem;
   text-align: justify;
-
-
 }
 
 .modal-btn {
@@ -226,6 +222,7 @@ input {
 .formData[data-error-visible="true"] .text-control {
   border: 2px solid #e54858;
 }
+
 /* 
 input[data-error]::after {
     content: attr(data-error);
@@ -340,10 +337,10 @@ input[data-error]::after {
   border: 0;
 }
 
-#confirmation {
-  position: fixed;
-  width: 309px;
-  height: 153px;
+.confirmation {
+  display: none;
+  width: 12em;
+  height: 16em;
   left: 566px;
   top: 423px;
   font-family: DM Sans;
@@ -351,10 +348,18 @@ input[data-error]::after {
   font-weight: normal;
   font-size: 36px;
   line-height: 142.6%;
-  display: flex;
-  align-items: center;
-  text-align: center;
   color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 50;
+}
+
+#close-btn {
+  display: none;
+  width: 8em;
 }
 
 /* custom select styles */
