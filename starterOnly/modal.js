@@ -53,6 +53,7 @@ const location6 = document.getElementById ("location6");
 const checkbox1 = document.getElementById ("checkbox1");
 const submitButton = document.getElementById ("submit");
 const thanksMessage = document.getElementById ("thanks-message");
+const modalBody = document.getElementsByClassName("modal-body");
 
 //event listener sur le bouton submit
 form.addEventListener('submit', (e) => {
@@ -118,6 +119,8 @@ form.addEventListener('submit', (e) => {
     thanksMessage.innerHTML = "Merci ! Votre réservation a été reçue.";
     document.querySelector("#close-btn").style.display = "block";
     document.querySelector("#form").style.display = "none";
+    document.querySelector(".close").style.display = "none";
+    document.querySelector(".modal-body").style.display = "none";
      e.preventDefault();
   } 
 

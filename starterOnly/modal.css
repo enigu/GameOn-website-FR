@@ -176,7 +176,6 @@ main {
   overflow: hidden;
   position: relative;
   color: #fff;
-  padding-top: 10px;
 }
 
 .modal-body {
@@ -349,6 +348,7 @@ input[data-error]::after {
   font-weight: normal;
   font-size: 2rem;
   line-height: 142.6%;
+  background: #232323;
   color: #FFFFFF;
   display: flex;
   flex-direction: column;
@@ -561,4 +561,5 @@ footer {
     opacity: 1;
   }
 }
+
 
