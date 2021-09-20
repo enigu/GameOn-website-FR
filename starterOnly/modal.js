@@ -22,7 +22,7 @@ function launchModal() {
   modalbg.style.display = "block";
 }
 
-// close modal form
+// close modal form with 'x' span
 closeModalBtn.addEventListener('click', function() {
     modalbg.style.display = "none";
   });
@@ -126,6 +126,12 @@ form.addEventListener('submit', (e) => {
     e.preventDefault() 
   }
 })
+
+// close modal form - close with button 'Fermer'
+const closeButton = document.querySelector("#close-btn");
+closeButton.addEventListener('click', function() {
+  modalbg.style.display = "none";
+});
 
 
 
