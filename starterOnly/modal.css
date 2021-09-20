@@ -339,14 +339,15 @@ input[data-error]::after {
 
 .confirmation {
   display: none;
+  margin:auto;
   width: 12em;
   height: 16em;
-  left: 566px;
-  top: 423px;
+  left: 35rem;
+  top: 26rem;
   font-family: DM Sans;
   font-style: normal;
   font-weight: normal;
-  font-size: 36px;
+  font-size: 2rem;
   line-height: 142.6%;
   color: #FFFFFF;
   display: flex;
@@ -355,6 +356,11 @@ input[data-error]::after {
   justify-content: space-around;
   align-items: center;
   z-index: 50;
+}
+
+.confirmation p {
+  padding: 1em;
+  text-align: center;
 }
 
 #close-btn {

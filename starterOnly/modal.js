@@ -51,8 +51,8 @@ const location4 = document.getElementById ("location4");
 const location5 = document.getElementById ("location5");
 const location6 = document.getElementById ("location6");
 const checkbox1 = document.getElementById ("checkbox1");
-const submitButton = document.getElementById ("submit")
-const confirmation = document.getElementsByClassName ("confirmation");
+const submitButton = document.getElementById ("submit");
+const thanksMessage = document.getElementById ("thanks-message");
 
 //event listener sur le bouton submit
 form.addEventListener('submit', (e) => {
@@ -114,10 +114,10 @@ form.addEventListener('submit', (e) => {
   //If no error messages in the messages array, submit form
 
   if (messages.length == 0) {
-    document.querySelector("#form").style.display = "none";
     document.querySelector(".confirmation").style.display = "flex";
-    confirmation.innerHTML = "Merci ! Votre réservation a été reçue."
+    thanksMessage.innerHTML = "Merci ! Votre réservation a été reçue.";
     document.querySelector("#close-btn").style.display = "block";
+    document.querySelector("#form").style.display = "none";
      e.preventDefault();
   } 
 
