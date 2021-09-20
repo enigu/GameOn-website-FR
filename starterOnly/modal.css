@@ -350,7 +350,6 @@ input[data-error]::after {
   line-height: 142.6%;
   background: #232323;
   color: #FFFFFF;
-  display: flex;
   flex-direction: column;
   align-content: center;
   justify-content: space-around;
